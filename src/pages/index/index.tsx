@@ -1,15 +1,17 @@
-import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
-import './index.scss'
+import { View } from '@tarojs/components'
+import Taro, { useLoad } from '@tarojs/taro'
 
-export default function Index () {
+import { STORAGE_KEYS } from '@/constants/storage-keys'
+
+export default function Index() {
   useLoad(() => {
-    console.log('Page loaded.')
+    const token = Taro.getStorageSync<string>(STORAGE_KEYS.TOKEN)
+    if (token) {
+      Taro.switchTab({ url: '/pages/home/index' })
+    } else {
+      Taro.reLaunch({ url: '/pages/login/index' })
+    }
   })
 
-  return (
-    <View className='index'>
-      <Text>Hello world!</Text>
-    </View>
-  )
+  return <View />
 }
