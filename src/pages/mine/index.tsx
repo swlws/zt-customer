@@ -6,10 +6,11 @@ import Taro from '@tarojs/taro'
 import { STORAGE_KEYS } from '@/constants/storage-keys'
 import type { UserInfo } from '@/types/user'
 
+import placeholderAvatar from '@/assets/logo.png'
+
 import './index.scss'
 
-const PLACEHOLDER_AVATAR =
-  'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const PLACEHOLDER_AVATAR = placeholderAvatar
 
 export default function Mine() {
   const [user, setUser] = useState<UserInfo | null>(null)
