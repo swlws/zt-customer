@@ -49,7 +49,7 @@ export default function Card({ title, onTap }: CardProps) {
 
 - 单位：布局尺寸用 `rpx`（设计稿 750）；hairline、字号细节可用 `px`；**强制不转换**用 `Px`（大写 P），如 `1Px`
 - 命名：BEM `block__element--modifier`，与组件根 class 对齐
-- 主题色 / 间距 / 字号统一走 `src/styles/_vars.scss`（若无则新建）
+- 主题色 / 间距 / 字号统一走 `src/styles/_vars.scss`，**已通过 `config/index.ts` 的 `sass.resource` 全局自动注入**，**任何页面 / 组件 `.scss` 文件都不要再写 `@import '@/styles/vars'`**（`@/` 是 TS path 别名，sass-loader 不识别，会报找不到文件）
 - 全局样式只放 `src/app.scss`；其余必须组件内 `import './index.scss'`
 - 不在 `.tsx` 写主题相关内联样式；动态尺寸/位置可内联
 

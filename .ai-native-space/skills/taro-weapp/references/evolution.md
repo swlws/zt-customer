@@ -49,6 +49,7 @@ type: project-skill-fragment
 
 | 日期 | 变更 | 受影响文件 |
 | --- | --- | --- |
+| 2026-06-06 | SCSS 变量改用 `sass.resource` 全局注入；禁止再写 `@import '@/styles/vars'`（sass-loader 不识别 `@/` 别名） | coding.md |
 | 2026-06-04 | 初始化：拆分为 6 个子文件 + 自我进化机制；子文件归入 `references/` | 全部 |
 
 <!-- 后续在此追加，最新的放最上面。格式： -->

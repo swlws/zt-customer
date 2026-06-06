@@ -2,8 +2,8 @@
 name: taro-weapp
 description: Taro 4.2 + React 18 微信小程序开发主索引。触发场景：新建/修改页面、新建组件、调用 Taro API、配置 app.config/页面 config、写小程序样式（rpx/SCSS）、路由/请求/状态、tabBar/分包、构建调试相关问题。
 type: project-skill
-version: 1.0.0
-last_update: 2026-06-04
+version: 1.1.0
+last_update: 2026-06-06
 entry: true
 ---
 
