@@ -1,54 +1,78 @@
 .mine {
   min-height: 100vh;
-  background: $color-bg;
+  background: #f3f4f7;
   box-sizing: border-box;
   padding-bottom: 120rpx;
 
-  &__banner {
-    height: 420rpx;
-    padding: 0 48rpx;
-    display: flex;
-    align-items: center;
-  }
-
-  &__banner-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  &__avatar {
-    width: 128rpx;
-    height: 128rpx;
-    border-radius: 50%;
-    background: $color-bg;
-    border: 6rpx solid #fff;
+  &__hero {
+    height: 304rpx;
+    background: #d9d9d9;
+    padding: 56rpx 44rpx 0;
     box-sizing: border-box;
   }
 
-  &__banner-meta {
-    margin-left: 24rpx;
+  &__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 116rpx;
+    height: 116rpx;
+    flex-shrink: 0;
+  }
+
+  &__avatar-image,
+  &__avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &__avatar-image {
+    display: block;
+  }
+
+  &__avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__avatar-placeholder-text {
+    font-size: 24rpx;
+    color: #444;
+  }
+
+  &__profile-meta {
+    margin-left: 34rpx;
     flex: 1;
     min-width: 0;
   }
 
   &__nickname {
-    font-size: 36rpx;
-    font-weight: 600;
-    color: $color-text;
+    font-size: 30rpx;
+    font-weight: 500;
+    color: #3a3a3a;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  &__stats {
-    margin: -56rpx 48rpx 0;
-    background: #fff;
-    border-radius: $radius-lg;
-    padding: 32rpx 24rpx;
-    box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.06);
+  &__content {
+    margin-top: -74rpx;
+    padding: 0 34rpx;
+  }
+
+  &__stats-card {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    min-height: 168rpx;
+    padding: 24rpx 0;
+    background: #fff;
+    border-radius: 20rpx;
+    box-shadow: 0 10rpx 30rpx rgba(15, 23, 42, 0.04);
   }
 
   &__stat {
@@ -59,44 +83,45 @@
   }
 
   &__stat-value {
-    font-size: 44rpx;
+    font-size: 52rpx;
     font-weight: 700;
-    color: $color-text;
-    line-height: 56rpx;
+    color: #333;
+    line-height: 1;
   }
 
   &__stat-label {
-    margin-top: 8rpx;
-    font-size: 24rpx;
-    color: $color-text-secondary;
+    margin-top: 30rpx;
+    font-size: 22rpx;
+    line-height: 1.2;
+    color: #444;
   }
 
-  &__menu {
-    margin: 24rpx 48rpx 0;
-    background: #fff;
-    border-radius: $radius-lg;
-    overflow: hidden;
+  &__menu-group {
+    margin-top: 104rpx;
   }
 
-  &__menu-item {
-    padding: 28rpx 32rpx;
+  &__menu-group--secondary {
+    margin-top: 56rpx;
+  }
+
+  &__menu-card {
+    height: 108rpx;
+    padding: 0 30rpx;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1rpx solid $color-border;
-  }
+    background: #fff;
+    border-radius: 18rpx;
+    box-sizing: border-box;
+    box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.03);
 
-  &__menu-item--last {
-    border-bottom: 0;
+    & + & {
+      margin-top: 24rpx;
+    }
   }
 
   &__menu-text {
     font-size: 28rpx;
-    color: $color-text;
-  }
-
-  &__menu-arrow {
-    font-size: 32rpx;
-    color: $color-text-secondary;
+    line-height: 40rpx;
+    color: #333;
   }
 }
