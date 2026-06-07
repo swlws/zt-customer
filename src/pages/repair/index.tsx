@@ -91,14 +91,19 @@ export default function RepairPage() {
 
   useDidShow(() => {
     const preferredDeviceId = Taro.getStorageSync<number>(STORAGE_KEYS.REPAIR_SELECTED_DEVICE_ID)
+    const targetTab = Taro.getStorageSync<'form' | 'records'>(STORAGE_KEYS.REPAIR_ACTIVE_TAB)
+
     if (preferredDeviceId) {
       setActiveTab('form')
+    } else if (targetTab) {
+      setActiveTab(targetTab)
     }
 
     hydrateUserDefaults()
     loadFormData(preferredDeviceId)
+    Taro.removeStorageSync(STORAGE_KEYS.REPAIR_ACTIVE_TAB)
 
-    if (activeTab === 'records' && !preferredDeviceId) {
+    if ((targetTab === 'records' || activeTab === 'records') && !preferredDeviceId) {
       loadTickets()
     }
   })
