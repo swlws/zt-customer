@@ -1,0 +1,259 @@
+.device-page {
+  min-height: 100vh;
+  background: #f3f4f7;
+  padding-bottom: 140rpx;
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18rpx 28rpx 16rpx;
+    background: #fff;
+  }
+
+  &__filter-trigger {
+    width: 166rpx;
+    height: 56rpx;
+    padding: 0 18rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1rpx solid #d8dde8;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+  }
+
+  &__filter-text {
+    font-size: 26rpx;
+    color: #2f3440;
+  }
+
+  &__filter-arrow {
+    font-size: 24rpx;
+    line-height: 1;
+    color: #4a4f59;
+    transform: translateY(-2rpx);
+  }
+
+  &__manual-entry-text {
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #2166f3;
+  }
+
+  &__content {
+    padding: 18rpx 24rpx 0;
+  }
+
+  &__scan-card {
+    min-height: 168rpx;
+    padding: 32rpx 24rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2rpx dashed #a9c0ff;
+    border-radius: 20rpx;
+    background: #f7faff;
+    box-sizing: border-box;
+  }
+
+  &__scan-icon {
+    width: 52rpx;
+    height: 52rpx;
+    margin-bottom: 18rpx;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rpx;
+  }
+
+  &__scan-icon-cell {
+    border: 6rpx solid #2166f3;
+    border-radius: 2rpx;
+    box-sizing: border-box;
+  }
+
+  &__scan-title {
+    font-size: 30rpx;
+    font-weight: 600;
+    line-height: 42rpx;
+    color: #2166f3;
+  }
+
+  &__scan-desc {
+    margin-top: 10rpx;
+    font-size: 22rpx;
+    line-height: 32rpx;
+    color: #a2a9b6;
+  }
+
+  &__list {
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+
+  &__empty {
+    padding: 90rpx 0;
+    text-align: center;
+  }
+
+  &__empty-text {
+    font-size: 26rpx;
+    color: #a2a9b6;
+  }
+}
+
+.device-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx 28rpx 22rpx;
+  box-shadow: 0 10rpx 30rpx rgba(15, 23, 42, 0.03);
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__media {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 18rpx;
+    margin-right: 16rpx;
+  }
+
+  &__icon-wrap {
+    width: 62rpx;
+    height: 62rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rpx;
+    background: #dfeaff;
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    font-size: 34rpx;
+    line-height: 1;
+  }
+
+  &__summary {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    display: block;
+    font-size: 28rpx;
+    font-weight: 600;
+    line-height: 40rpx;
+    color: #2f3440;
+  }
+
+  &__code {
+    display: block;
+    margin-top: 4rpx;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #a2a9b6;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 8rpx;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    flex-shrink: 0;
+  }
+
+  &__status-dot {
+    font-size: 18rpx;
+  }
+
+  &__status-text {
+    font-size: 24rpx;
+    line-height: 34rpx;
+  }
+
+  &__detail-list {
+    margin-top: 22rpx;
+  }
+
+  &__detail-row {
+    min-height: 48rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__detail-label {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #8f96a3;
+  }
+
+  &__detail-value {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #2f3440;
+    text-align: right;
+  }
+
+  &__footer {
+    margin-top: 18rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__warranty-tag {
+    min-width: 92rpx;
+    height: 42rpx;
+    padding: 0 16rpx;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8rpx;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    box-sizing: border-box;
+  }
+
+  &__warranty-tag--active {
+    background: #dce9ff;
+    color: #2166f3;
+  }
+
+  &__warranty-tag--expired {
+    background: #ffd9d4;
+    color: #f25d4c;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    gap: 6rpx;
+    color: #2166f3;
+
+    &.is-disabled {
+      color: #b6bcc8;
+    }
+  }
+
+  &__action-text {
+    font-size: 26rpx;
+    font-weight: 600;
+    line-height: 36rpx;
+  }
+
+  &__action-arrow {
+    font-size: 24rpx;
+    line-height: 1;
+  }
+}

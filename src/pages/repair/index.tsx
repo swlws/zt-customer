@@ -58,7 +58,7 @@ export default function RepairPage() {
     }))
   }
 
-  const loadFormData = async () => {
+  const loadFormData = async (preferredDeviceId?: number) => {
     try {
       const [faultTypeList, deviceList] = await Promise.all([
         getFaultTypes(),
@@ -66,6 +66,14 @@ export default function RepairPage() {
       ])
       setFaultTypes(faultTypeList)
       setDevices(deviceList)
+
+      if (preferredDeviceId) {
+        const matchedDevice = deviceList.find((item) => item.id === preferredDeviceId)
+        if (matchedDevice) {
+          setFormData((prev) => ({ ...prev, deviceId: matchedDevice.id }))
+        }
+        Taro.removeStorageSync(STORAGE_KEYS.REPAIR_SELECTED_DEVICE_ID)
+      }
     } catch {
       Taro.showToast({ title: '表单数据加载失败', icon: 'none' })
     }
@@ -82,10 +90,15 @@ export default function RepairPage() {
   }
 
   useDidShow(() => {
-    hydrateUserDefaults()
-    loadFormData()
+    const preferredDeviceId = Taro.getStorageSync<number>(STORAGE_KEYS.REPAIR_SELECTED_DEVICE_ID)
+    if (preferredDeviceId) {
+      setActiveTab('form')
+    }
 
-    if (activeTab === 'records') {
+    hydrateUserDefaults()
+    loadFormData(preferredDeviceId)
+
+    if (activeTab === 'records' && !preferredDeviceId) {
       loadTickets()
     }
   })

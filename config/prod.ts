@@ -31,7 +31,7 @@ export default {
     //     .plugin('prerender')
     //     .use(new Prerender({
     //       staticDir,
-    //       routes: [ '/pages/index/index' ],
+    //       routes: [ '/pages/device/index' ],
     //       postProcess: (context) => ({ ...context, outputPath: path.join(staticDir, 'index.html') })
     //     }))
     // }
