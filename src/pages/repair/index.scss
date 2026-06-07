@@ -1,7 +1,7 @@
 .repair-page {
   min-height: 100vh;
   background: $color-bg;
-  padding-bottom: 260rpx;
+  padding-bottom: 120rpx;
 
   &__tabs {
     display: flex;
@@ -292,13 +292,7 @@
 }
 
 .submit-section {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 120rpx;
-  padding: 20rpx 24rpx;
-  background: $color-bg;
-  box-sizing: border-box;
+  padding: 32rpx 0 0;
 }
 
 .submit-btn {

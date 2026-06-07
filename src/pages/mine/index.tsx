@@ -27,7 +27,21 @@ export default function Mine() {
     { key: "settings", text: "设置" },
   ] as const;
 
-  const onClickMenu = () => {
+  const openAgreementPage = (type: "privacy" | "user") => {
+    Taro.navigateTo({
+      url: `/pages/agreement/index?type=${type}`,
+    });
+  };
+
+  const onClickMenu = (key: (typeof menuItems)[number]["key"]) => {
+    if (key === "agreement") {
+      openAgreementPage("user");
+      return;
+    }
+    if (key === "privacy") {
+      openAgreementPage("privacy");
+      return;
+    }
     Taro.showToast({ title: "敬请期待", icon: "none" });
   };
 
@@ -68,7 +82,7 @@ export default function Mine() {
           <View
             key={item.key}
             className={`mine__menu-item ${index === menuItems.length - 1 ? "mine__menu-item--last" : ""}`}
-            onClick={onClickMenu}
+            onClick={() => onClickMenu(item.key)}
           >
             <Text className="mine__menu-text">{item.text}</Text>
             <Text className="mine__menu-arrow">›</Text>
